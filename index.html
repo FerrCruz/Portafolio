@@ -31,7 +31,7 @@
                                    <i class="mdi mdi-animation-outline mdi-48px"></i>
                                    <div class="title">
                                         <span>01</span>
-                                        <h4>Diseño</h4>
+                                        <h4>Animaciones</h4>
                                    </div> 
                               </div>
                               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam nobis iste deleniti quod eligendi.</p>
@@ -111,7 +111,6 @@
                               <div>                              
                                    <h4 style="text-align: center;"><a href="https://ferrcruz.github.io/pizzeriaKentucky/" class="text-dark" target="_blank">Proyecto pizzeria kentucky</a></h4>
                               </div> 
-                              <input id="textkentucky" type="text" value="https://ferrcruz.github.io/pizzeriaKentucky/" placeholder="Ingrese texto" style="width:100%;" /><br />                         
                               <div id="qrcodekentucky" style="width:100px; height:100px; margin: 15px auto auto auto; "></div>
                          </div>
                     </div>
@@ -120,7 +119,7 @@
                               <div>                              
                                    <h4 style="text-align: center;"><a href="https://ferrcruz.github.io/punteriaJuego/" class="text-dark" target="_blank">Proyecto Juego Punteria</a></h4>
                               </div> 
-                              <input id="textpunteria" type="text" value="https://ferrcruz.github.io/punteriaJuego/" placeholder="Ingrese texto" style="width:100%;" /><br />                         
+                                                       
                               <div id="qrcodepunteria" style="width:100px; height:100px; margin: 15px auto auto auto; "></div>
                          </div>
                     </div>
@@ -156,15 +155,15 @@
          
           function makeCode () {		
                var elText = document.getElementById("text");
-               var elTextKentucky = document.getElementById("textkentucky");
-               var elTextPunteria = document.getElementById("textpunteria");         
+               var elTextKentucky = "https://ferrcruz.github.io/pizzeriaKentucky/";
+               var elTextPunteria = "https://ferrcruz.github.io/punteriaJuego/";         
                
-               if (!elText.value || !elTextKentucky.value || !elTextPunteria.value) {		
+               if (!elText.value || !elTextKentucky || !elTextPunteria) {		
                     return;
                }
                qrcode.makeCode(elText.value);
-               qrcodekentucky.makeCode(elTextKentucky.value);
-               qrcodepunteria.makeCode(elTextPunteria.value);
+               qrcodekentucky.makeCode(elTextKentucky);
+               qrcodepunteria.makeCode(elTextPunteria);
           }
 
           
