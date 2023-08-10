@@ -8,6 +8,8 @@
      <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
      <link rel="stylesheet" href="css/materialdesignicons.min.css" type="text/css">
      <link rel="stylesheet" href="css/style.css" type="text/css">
+     <link rel="stylesheet" href="css/stylesMenu.css" type="text/css">
+
 </head>
 <body>
      <section class="home" id="home">
@@ -16,11 +18,68 @@
                     <h1>Me presento, soy <span>Fernando Cruz</span></h1>
                     <h2><span class="txt-rotate"></span></h2>                    
                     <div class="getintouch">
-                         <div><a href="#contact" class="btn">Contacto</a></div>
+                         <a href="https://github.com/FerrCruz" target="_blank"><img src="img/github-mark-white.svg" style="width: 44px;" /></a> <br>
+                         <a href="https://www.linkedin.com/in/fnandocruz/" target="_blank"><img src="img/icons8-linkedin.svg" style="width: 44px; margin-top: 40px;" /></a>
                     </div>
                </div>
           </div>
      </section>
+
+     <header class="header">
+          <div class="bar-content">
+              <div class="content-menu">
+                  <p class="content-menu-logo">Sobre mi</p>
+                  <div class="menu-icon" id="menu-icon">
+                      <div class="menu-icon-bar"></div>
+                  </div>
+              </div>
+          </div>
+   
+          <nav class="nav">
+              <ul class="menu" id="menu">
+                  <li class="menu-item">
+                      <a
+                          href="#"
+                          class="item-link"
+                      >Animaciones</a>
+                  </li>
+                  <li class="menu-item">
+                      <a
+                          href="#"
+                          class="item-link"
+                      >Desarrollos</a>
+                  </li>
+                  <li class="menu-item">
+                      <a
+                          href="#"
+                          class="item-link"
+                      >Ideas</a>
+                  </li>
+   
+                  <li class="menu-item">
+                      <a
+                          href="#"
+                          class="item-link"
+                      >Generador de Código QR</a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a
+                        href="#"
+                        class="item-link"
+                    >Proyecto Pizzeria Kentucky</a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a
+                        href="#PP"
+                        class="item-link"
+                    >Proyecto Juego Punteria</a>
+                  </li>
+              </ul>
+          </nav>
+      </header>
+
 
      <section class="services" id="services">
           <div class="container">
@@ -114,7 +173,7 @@
                               <div id="qrcodekentucky" style="width:100px; height:100px; margin: 15px auto auto auto; "></div>
                          </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4" id="PP">
                          <div class="service-box">
                               <div>                              
                                    <h4 style="text-align: center;"><a href="https://ferrcruz.github.io/punteriaJuego/" class="text-dark" target="_blank">Proyecto Juego Punteria</a></h4>
@@ -200,5 +259,15 @@
 
                makeCode();
      </script>
+
+     <script>
+
+          const showMenu = document.getElementById('menu-icon');
+          const menu = document.getElementById('menu');
+          
+          showMenu.addEventListener('click', () => menu.classList.toggle('menu--show') );
+
+     </script>
+
 </body>
 </html>
