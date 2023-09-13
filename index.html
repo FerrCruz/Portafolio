@@ -103,6 +103,7 @@
      <section class="services" id="services">
           <div class="container">
                <div class="row">
+			   <!--
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                          <div class="service-box">
                               <div class="icontitle">
@@ -141,7 +142,16 @@
                          </div>
                     </div>
                     
-                    
+                    -->
+					<div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                         <div class="service-box">
+                              <div>                              
+                                   <h4 style="text-align: center;"><a href="https://linktr.ee/fnandocruz" class="text-dark" target="_blank">Mi CV</a></h4>
+                              </div> 
+                              
+                              <div id="qrcv" style="width:100px; height:100px; margin: 15px auto auto auto; "></div>
+                         </div>
+                    </div>
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                          <div class="service-box">
                               <div>                              
@@ -154,7 +164,7 @@
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                          <div class="service-box">
                               <div>                              
-                                   <h4 style="text-align: center;"><a href="https://ferrcruz.github.io/pizzeriaKentucky/" class="text-dark" target="_blank">Proyecto pizzeria kentucky</a></h4>
+                                   <h4 style="text-align: center;"><a href="https://ferrcruz.github.io/pizzeriaKentucky/" class="text-dark" target="_blank">Proyecto Pizzeria Kentucky</a></h4>
                               </div> 
                               <div id="qrcodekentucky" style="width:100px; height:100px; margin: 15px auto auto auto; "></div>
                          </div>
@@ -211,6 +221,10 @@
                height:100
           });
 		  
+		  var qrcv = new QRCode(document.getElementById('qrcv'),{
+               width:100,
+               height:100
+          });
           
          
           function makeCode () {		
@@ -218,14 +232,16 @@
                var elTextKentucky = "https://ferrcruz.github.io/pizzeriaKentucky/";
                var elTextPunteria = "https://ferrcruz.github.io/punteriaJuego/";         
 			   var elTextSerpiente = "https://ferrcruz.github.io/SerpienteJuego/";
+			   var elTextCv = "https://drive.google.com/drive/folders/1GkkDZye4rKzO9ADxxNuO_pJ3PoSuGuuv?usp=sharing";
                
-               if (!elText.value || !elTextKentucky || !elTextPunteria || !elTextSerpiente) {		
+               if (!elText.value || !elTextKentucky || !elTextPunteria || !elTextSerpiente || !elTextCv) {		
                     return;
                }
                qrcode.makeCode(elText.value);
                qrcodekentucky.makeCode(elTextKentucky);
                qrcodepunteria.makeCode(elTextPunteria);
 			   qrcodeserpiente.makeCode(elTextSerpiente);
+			   qrcv.makeCode(elTextCv);
           }
 
           
@@ -269,7 +285,17 @@
                          makeCode();
                     }
                });
-			   
+				
+				 $("textcv").
+               on("blur",function(){
+                    makeCode();
+               }).
+               on("keydown", function(e){
+                    if(e.keycode == 13){
+                         makeCode();
+                    }
+               });
+			   			  
                makeCode();
      </script>
 
